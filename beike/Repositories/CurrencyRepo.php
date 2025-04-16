@@ -87,8 +87,8 @@ class CurrencyRepo
         if (self::$enabledCurrencies !== null) {
             return self::$enabledCurrencies;
         }
-
-        return self::$enabledCurrencies = Currency::query()->where('status', true)->get();
+        self::$enabledCurrencies = Currency::query()->where('status', true)->get()
+        return hook_filter('repo.country.list.enabled', self::$enabledCurrencies);
     }
 
     /**
