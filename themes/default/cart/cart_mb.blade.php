@@ -1,4 +1,5 @@
 <div v-if="products.length">
+  @hook('mb.cart.right.products.before')
   <div class="mb-product-wrap">
     <div v-for="product, index in products" :key="index" :class="['mb-product-list', product.selected ? 'active' : '']">
       <div class="d-flex align-items-center product-img">
