@@ -6,6 +6,7 @@
   @php $check = 0 @endphp
 
   @if ($carts)
+  @hook('mini.cart.right.products.before')
   <div class="offcanvas-right-products">
     @foreach ($carts as $cart)
       @if ($cart['selected']) @php $check = $check + 1 @endphp @endif
